@@ -26,12 +26,13 @@ node *addSI(node *inicio, char valor)
         return novo;
     node *anterior = NULL;
     node *atual = inicio;
-    while (atual->next >= valor)
+    while (atual->data > valor)
     {
         anterior = atual;
         atual = atual->next;
     }
     anterior->next = novo;
+    novo->next = atual;
     return inicio;
 }
 
